@@ -1,3 +1,5 @@
+# Disclaimer the model will take sometime to boot see more [here](https://replicate.com/docs/how-does-replicate-work#cold-boots).
+
 ## Incident Plat
 
 Get a summary of your errors in your deployments from any app directly from vercel using a popular LLM [LLama 🦙](https://replicate.com/meta/llama-2-70b-chat)https://replicate.com/meta/llama-2-70b-chat
