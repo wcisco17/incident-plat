@@ -1,10 +1,10 @@
 
 type CreateDeploymentRouteType = {
-  projectId: string
+  app: string
 }
 
-export const createDeploymentRoute = ({ projectId }: CreateDeploymentRouteType) => {
-  return `/d/${projectId}`
+export const createDeploymentRoute = ({ app }: CreateDeploymentRouteType) => {
+  return `/d/${app}`
 }
 
 
@@ -13,6 +13,6 @@ type CreateLogRouteType = CreateDeploymentRouteType & {
   url?: string
 }
 
-export const createLogRoute = ({ uid, projectId, url }: CreateLogRouteType) => {
-  return `${createDeploymentRoute({ projectId })}/w/${uid}?url=${url}`
+export const createLogRoute = ({ uid, app, url }: CreateLogRouteType) => {
+  return `${createDeploymentRoute({ app })}/w/${uid}?url=${url}`
 }

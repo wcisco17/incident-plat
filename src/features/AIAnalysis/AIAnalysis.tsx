@@ -43,7 +43,6 @@ export function AIAnalysis({ deployment }: AIAnalysisProps) {
 
       {
         messages.map((message) => {
-          console.log({ message });
           if (message.role === 'assistant') {
             return <div key={message.id} className='mt-4'>{message.content}</div>;
           }

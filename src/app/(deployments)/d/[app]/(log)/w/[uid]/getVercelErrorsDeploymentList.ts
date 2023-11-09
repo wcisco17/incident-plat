@@ -28,7 +28,7 @@ function filterErrorLogs(logs: VercelDeploymentLogType): VercelDeploymentLogType
   return logs.filter(event => event.type === 'stderr');
 }
 
-export async function getVercelDeploymentLogByUid({ uid, opt: { cache = 'enabled' }, }: GetVercelByDeploymentsLog): Promise<VercelDeploymentLogType> {
+export async function getVercelErrorsDeploymentList({ uid, opt: { cache = 'enabled' }, }: GetVercelByDeploymentsLog): Promise<VercelDeploymentLogType> {
   if (!uid) return [];
 
   try {

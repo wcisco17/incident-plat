@@ -21,7 +21,7 @@ export type NextPageProps<
 }
 
 export type DeploymentBasePageParams = NextPageParams<
-  'projectId' | 'uid'
+  'app' | 'uid'
 >
 
 export type DeploymentPageParams<ParamKeys extends string = never> =

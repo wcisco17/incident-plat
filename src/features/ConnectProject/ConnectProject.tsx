@@ -17,31 +17,31 @@ import { createDeploymentRoute } from '@/lib/routes';
 
 export function ConnectProject() {
   const router = useRouter();
-  const [projectId, setProjectId] = useState<string>('');
+  const [appName, setAppName] = useState<string>('');
 
   return (
     <Card className='w-[350px]'>
       <CardHeader>
-        <CardTitle>Add your project ID</CardTitle>
-        <CardDescription>In your vercel dashboard add your projectId.</CardDescription>
+        <CardTitle>Add your App name</CardTitle>
+        <CardDescription>In your vercel dashboard look for you app name.</CardDescription>
       </CardHeader>
       <CardContent>
         <form>
           <div className='grid w-full items-center gap-4'>
             <div className='flex flex-col space-y-1.5'>
-              <Label htmlFor='name'>Project Id</Label>
+              <Label htmlFor='name'>App Name</Label>
               <Input
                 id='name'
-                value={projectId}
-                onChange={(e) => setProjectId(e.target.value as string)}
-                placeholder='Should be in a (cuid) format'
+                value={appName}
+                onChange={(e) => setAppName(e.target.value as string)}
+                placeholder='Enter App name'
               />
             </div>
           </div>
         </form>
       </CardContent>
       <CardFooter className='flex justify-between'>
-        <Button disabled={projectId.length <= 0} onClick={() => router.push(createDeploymentRoute({ projectId }))}>Connect</Button>
+        <Button disabled={appName.length <= 0} onClick={() => router.push(createDeploymentRoute({ app: appName }))}>Connect</Button>
       </CardFooter>
     </Card>
   );

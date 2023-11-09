@@ -53,10 +53,10 @@ export const columns: ColumnDef<VercelDeploymentBaseType>[] = [
 
 type DeploymentErrorListType = {
   data: VercelDeploymentBaseType[]
-  projectId: string
+  app: string
 }
 
-export function DeploymentErrorList({ data, projectId }: DeploymentErrorListType) {
+export function DeploymentErrorList({ data, app }: DeploymentErrorListType) {
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     [],
@@ -83,7 +83,7 @@ export function DeploymentErrorList({ data, projectId }: DeploymentErrorListType
               </DropdownMenuTrigger>
 
               <DropdownMenuContent align='end'>
-                <Link href={createLogRoute({ uid: row.original.uid, projectId, url: row.original.inspectorUrl })}>
+                <Link href={createLogRoute({ uid: row.original.uid, app, url: row.original.inspectorUrl })}>
                   <DropdownMenuItem className='cursor-pointer'>View Deployment Log</DropdownMenuItem>
                 </Link>
               </DropdownMenuContent>

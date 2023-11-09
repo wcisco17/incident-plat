@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 
 import Link from 'next/link';
 
-import { getVercelDeploymentLogByUid } from './getVercelDeploymentLogByUid';
+import { getVercelErrorsDeploymentList } from './getVercelErrorsDeploymentList';
 import type { DeploymentPageProps } from '../../../next.types';
 
 import { AIAnalysis } from '@/features/AIAnalysis';
@@ -11,7 +11,7 @@ import { Button } from '@/components/ui/button';
 export default async function DeploymentLogsInfoPage(props: DeploymentPageProps<'uid'>) {
   const { params } = props;
 
-  const deployment = await getVercelDeploymentLogByUid({ uid: params.uid, opt: { cache: 'enabled' } });
+  const deployment = await getVercelErrorsDeploymentList({ uid: params.uid, opt: { cache: 'enabled' } });
 
   if (!params.uid || !deployment.length) return notFound();
 
