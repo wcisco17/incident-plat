@@ -5,7 +5,7 @@ Get a summary of your errors in your deployments from any app directly from verc
 if you would like to run this app do the following:
 
 - sign up for the services below and fill in your env files with their token.
-
+```
 VERCEL_AUTH_TOKEN==******************
 VERCEL_AUTH_PROJECT_ID==******************
 
@@ -14,7 +14,7 @@ UPSTASH_URL==******************
 
 REPLICATE_API_TOKEN==******************
 REPLICATE_URL=******************
-
+```
 
 ## Demo
 
